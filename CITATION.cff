@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this report, please cite it as below."
+authors:
+- family-names: "Rombaldoni"
+  given-names: "Francesco"
+title: "Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_National_Strategic_Hub_-PSN-"
+version: 1.0.0
+date-released: 2026-01-22
+url: "https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_National_Strategic_Hub_-PSN-"
