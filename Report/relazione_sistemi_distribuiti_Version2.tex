@@ -1,0 +1,265 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{appendix}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{authblk}
+\usepackage{hyperref}
+
+\usepackage[many]{tcolorbox}
+
+\usepackage{minted}
+\setminted{
+  frame=single,
+  linenos,
+  fontsize=\footnotesize,
+  breaklines,
+  breakanywhere,
+  numbersep=4pt,
+  xleftmargin=6pt,
+  framesep=2pt
+}
+
+\usepackage{csquotes}
+\usepackage{biblatex}
+\addbibresource{riferimenti.bib}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=MidnightBlue,
+  urlcolor=MidnightBlue,
+  citecolor=MidnightBlue
+}
+
+% Titolo/Autore (adatta liberamente)
+\title{\color{Black}\bf{Sistemi distribuiti e trasformazione digitale della PA italiana:\\
+dal decentramento operativo a piattaforme nazionali e cloud (PNRR, PSN, PDND)}}
+\author[1]{\color{Black}\bf{Francesco Rombaldoni}}
+\affil[1]{\texttt{f.rombaldoni@campus.uniurb.it}}
+\date{}
+
+\begin{document}
+
+\fancypagestyle{firstpage}
+{
+  \fancyhead[L]{\footnotesize{\bf{Universit\`a degli Studi di Urbino Carlo Bo}}}
+  \fancyhead[R]{\footnotesize{\bf{CdL Magistrale Informatica e Innovazione Digitale}}}
+}
+\thispagestyle{firstpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\footnotesize{\thetitle}}
+\fancyfoot{}
+\fancyfoot[R]{\footnotesize{\bf{\thepage}}}
+\fancyfoot[L]{\footnotesize{Relazione -- Sistemi Distribuiti}}
+
+\maketitle
+
+\begin{tcolorbox}[colback=WhiteSmoke, width=\linewidth, arc=1mm, auto outer arc]
+\section*{Riassunto}
+La trasformazione digitale della Pubblica Amministrazione italiana, accelerata dal PNRR, sta introducendo un ecosistema di infrastrutture e piattaforme nazionali che mira a superare una frammentazione storica: migrazione al cloud, rafforzamento dei presidi di sicurezza, standardizzazione e interoperabilità tramite API.
+Questa relazione legge tale transizione con lenti tipiche dei \emph{sistemi distribuiti}, distinguendo tra \emph{centralizzazione di governance} (regole, cataloghi, qualificazione, responsabilità e processi) e \emph{distribuzione tecnica} (cloud, replica, fault domain, multi-region, asincronia e microservizi).
+Dopo un inquadramento del contesto pre-PNRR e una sintesi ragionata dei principali obiettivi dichiarati dai documenti ufficiali, si propone una discussione critica su benefici e trade-off: interoperabilità e resilienza da un lato; concentrazione del rischio, dipendenza operativa e fattore umano dall’altro. \\
+\textbf{Parole chiave:} sistemi distribuiti, interoperabilità, cloud, resilienza, osservabilità, sicurezza, PSN, PDND, PNRR.
+\end{tcolorbox}
+
+\section{Introduzione}
+I sistemi distribuiti costituiscono la base tecnica della maggior parte dei servizi digitali contemporanei: applicazioni web, piattaforme cloud, sistemi di pagamento, identità digitale, servizi di notifica e, in generale, tutte le architetture in cui più componenti cooperano via rete per offrire un servizio unitario. In un corso di \emph{Sistemi Distribuiti} si impara rapidamente che l’aspetto centrale non è la mera presenza di più macchine: il punto è gestire correttamente \emph{guasti parziali}, \emph{latenza}, \emph{coordinamento}, \emph{consistenza dei dati} e \emph{complessità operativa}.
+
+Nel caso della PA italiana, la trasformazione in atto è particolarmente interessante perché non riguarda solo la sostituzione di tecnologie, ma coinvolge una dimensione più ampia: \emph{governance}, \emph{standard}, \emph{processi} e capacità di realizzare \emph{interoperabilità} in modo sistematico. Il Piano Triennale 2024--2026 sottolinea che la digitalizzazione dei servizi richiede un framework comune e richiama architetture a microservizi e un’evoluzione dell’interoperabilità verso la condivisione di servizi (e-service) tramite PDND \cite{piano_triennale_2024_2026}. Parallelamente, la strategia cloud (Cloud Italia) e il Polo Strategico Nazionale (PSN) mirano a consolidare e mettere in sicurezza infrastrutture storicamente eterogenee \cite{piano_triennale_2024_2026, psn_descrizione_servizi_2025}.
+
+\subsection{Obiettivo e impostazione della relazione}
+La relazione cerca di rispondere a tre domande, mantenendo un tono prudente e aderente alle fonti:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Com’era l’ecosistema digitale della PA prima della transizione PNRR/Cloud?}
+  \item \textbf{Quali elementi architetturali (tecnici e di governance) vengono introdotti: PSN e PDND, e con quali razionali?}
+  \item \textbf{Quali trade-off emergono quando si osserva la transizione in ottica di sistemi distribuiti, distinguendo benefici e criticità?}
+\end{enumerate}
+
+La prima parte è descrittiva (contesto e obiettivi dichiarati). La parte finale è più critica: non mette in discussione i principi generali (interoperabilità, qualità, sicurezza), ma discute le condizioni che rendono tali obiettivi realisticamente raggiungibili.
+
+\section{Richiami essenziali di Sistemi Distribuiti (per leggere il caso PA)}
+\subsection{Proprietà desiderabili e difficoltà strutturali}
+In modo operativo, un sistema distribuito è un insieme di componenti che cooperano tramite scambio di messaggi su rete. Da questa definizione discendono caratteristiche desiderabili:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Scalabilità}: il sistema cresce (utenti, richieste, dati) mantenendo prestazioni accettabili.
+  \item \textbf{Disponibilità e resilienza}: il servizio continua a funzionare anche in presenza di guasti parziali.
+  \item \textbf{Manutenibilità}: possibilità di evolvere componenti senza fermare l’intero sistema.
+  \item \textbf{Osservabilità}: logging, metriche e tracing sono necessari per capire cosa succede realmente in produzione.
+\end{itemize}
+
+Allo stesso tempo, esistono difficoltà inevitabili: la rete introduce latenza e può partizionarsi; i nodi possono fallire in modo indipendente; e molte garanzie (consistenza forte, ordinamento totale, coordinamento) hanno un costo elevato. In pratica, progettare sistemi distribuiti significa gestire compromessi.
+
+\subsection{Centralizzazione di governance vs distribuzione tecnica}
+Per analizzare correttamente il caso italiano conviene distinguere due piani:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Governance} (più ``centralizzata'' nel coordinamento): standard, policy, cataloghi, accordi, ruoli e responsabilità, qualificazione dei servizi, regole di interoperabilità, audit.
+  \item \textbf{Tecnologia} (intrinsecamente distribuita): cloud multi-fault-domain e multi-region, microservizi, integrazione via API, asincronia, caching, disaster recovery.
+\end{itemize}
+
+Questa distinzione è cruciale perché una strategia può aumentare la \emph{centralità delle regole} senza “centralizzare tecnicamente” tutto in un singolo nodo. Al contrario, un sistema tecnicamente distribuito può essere “ingovernabile” se mancano standard comuni.
+
+\section{Prima del PNRR: frammentazione, integrazioni ad-hoc e disomogeneità}
+\subsection{Autonomia locale e conseguenze sistemiche}
+Prima della spinta PNRR, molte amministrazioni hanno sviluppato sistemi informativi in modo relativamente autonomo (con vincoli normativi, ma senza un disegno tecnico uniforme). La conseguenza è un mosaico di soluzioni: eterogeneità di fornitori, tecnologie, livelli di sicurezza, capacità di gestione.
+
+In un contesto del genere, l’interoperabilità tende a nascere come integrazione \emph{punto-punto}: due enti costruiscono un canale di scambio dati e definiscono regole “locali” di comunicazione. Funziona, ma scala male: ogni nuova integrazione aumenta complessità e costi, e la qualità del risultato dipende dalle capacità dei singoli enti.
+
+\subsection{SPC come infrastruttura, ma non sufficiente come ecosistema}
+Il Sistema Pubblico di Connettività (SPC) è richiamato come infrastruttura di interscambio e interoperabilità \cite{piano_triennale_2024_2026}. Tuttavia, una rete condivisa non basta: l’interoperabilità richiede anche contratti di servizio, standard semantici e API, governance degli accessi, logging e audit. In termini da sistemi distribuiti, non basta “la connettività”: servono \emph{protocolli di cooperazione} e \emph{garanzie operative}.
+
+\subsection{Problemi tipici di un ``distribuito non governato''}
+In uno scenario frammentato emergono problemi ricorrenti:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Resilienza disomogenea}: data center obsoleti o sotto-dimensionati portano a interruzioni e recovery difficili.
+  \item \textbf{Sicurezza non uniforme}: posture variabile; patching e monitoraggio non omogenei.
+  \item \textbf{Integrazione costosa}: ogni interfaccia è negoziata e implementata ad hoc.
+  \item \textbf{Duplicazione e disallineamento dei dati}: basi dati replicate localmente senza sincronizzazioni solide.
+\end{itemize}
+
+Il Piano Triennale richiama esplicitamente la necessità di migrare servizi da infrastrutture non adeguate a standard di qualità, sicurezza e affidabilità \cite{piano_triennale_2024_2026}.
+
+\section{Transizione PNRR: cloud-first, razionalizzazione e piattaforme abilitanti}
+\subsection{PNRR come acceleratore (anche organizzativo)}
+Il PNRR non è soltanto “finanziamento”: introduce anche una logica di programma con obiettivi, monitoraggio e rendicontazione \cite{pnrr_sistema_gestione_controllo}. Questo elemento, pur non essendo tecnico, influenza l’architettura reale perché impone priorità e scadenze (migrazioni, adozione piattaforme) e favorisce convergenza verso strumenti standard, riducendo la possibilità che ogni ente proceda in modo totalmente indipendente.
+
+\subsection{Strategia Cloud Italia e Polo Strategico Nazionale}
+La strategia \emph{cloud-first} viene giustificata in termini di autonomia tecnologica, controllo sui dati e aumento della resilienza \cite{piano_triennale_2024_2026}. In tale cornice, il PSN viene presentato come infrastruttura ad alta affidabilità sul territorio nazionale a supporto della razionalizzazione dei CED e della migrazione dei servizi.
+
+Il documento PSN sui nuovi servizi 2025 evidenzia che l’offerta non è monolitica: coesistono aree come PSN Managed (con tecnologie specifiche) e Secure Public Cloud (Azure/GCP e integrazioni), con un forte focus su aspetti di sicurezza, governance e disaster recovery \cite{psn_descrizione_servizi_2025}. In prospettiva didattica, è interessante notare come il cloud qui sia sia \emph{infrastruttura} sia \emph{modello operativo}: tenant, cataloghi, SKU, policy, logging, supporto multi-livello.
+
+\subsection{PDND: interoperabilità come “layer” nazionale}
+Il Piano Triennale descrive PDND come il layer focale per la condivisione di e-service: le PA pubblicano API (REST o SOAP per retrocompatibilità), registrate in un catalogo pubblico, e la piattaforma gestisce autenticazione, autorizzazione e raccolta delle informazioni di accesso/transazione \cite{piano_triennale_2024_2026}. È esplicitamente collegata al principio \emph{once-only}: evitare che la PA richieda dati che già possiede.
+
+Di particolare interesse per un corso di sistemi distribuiti sono le evoluzioni previste per PDND: bulk, asincrono, caching, modelli inversi e scambio sincrono/asincrono \cite{piano_triennale_2024_2026}. Sono temi “classici” di architetture distribuite, non solo di policy.
+
+\section{Architettura concettuale dell’ecosistema: dalla rete ai servizi}
+\subsection{Vista a livelli}
+Una lettura “a strati” aiuta a collegare policy e tecnologia:
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Infrastruttura}: cloud (PSN Managed, Secure Public Cloud, cloud qualificati), con requisiti di sicurezza e continuità.
+  \item \textbf{Piattaforme abilitanti}: identità, pagamenti, notifiche, basi dati nazionali; strumenti di monitoraggio e analytics.
+  \item \textbf{Interoperabilità}: PDND come catalogo e governance delle API.
+  \item \textbf{Servizi verticali}: servizi degli enti, che dovrebbero progettare contratti (API) e processi riusabili.
+\end{enumerate}
+
+\subsection{Una nota su microservizi e change management}
+Il Piano Triennale propone microservizi come soluzione agile e scalabile, utile anche a standardizzare processi e facilitare il change management \cite{piano_triennale_2024_2026}. Questa affermazione è importante perché riconosce un punto spesso trascurato: in sistemi distribuiti l’architettura non è separabile dall’organizzazione. Un’adozione “di facciata” (microservizi senza osservabilità, senza governance delle API, senza processi di rilascio) rischia di aumentare complessità senza ottenere benefici.
+
+\section{PDND in ottica di sistemi distribuiti: sincrono, asincrono, caching e bulk}
+Questa sezione espande il collegamento tra le evoluzioni previste per PDND e i pattern distribuiti.
+
+\subsection{Interazioni sincrone: semplicità apparente e limiti}
+L’invocazione sincrona (richiesta/risposta) è spesso la forma più semplice da implementare e spiegare. Tuttavia, nei sistemi distribuiti presenta limiti noti: timeouts, ritrasmissioni, cascading failures. Se molti servizi dipendono da un servizio “fonte”, un problema anche breve può propagarsi a valle.
+
+In un ecosistema PA, questo implica che l’adozione di API via PDND dovrebbe essere accompagnata da:
+\begin{itemize}[leftmargin=*]
+  \item timeouts e circuit breaker nelle applicazioni client;
+  \item progettazione di SLA realistici (non “sempre disponibile”);
+  \item meccanismi di fallback e degradazione controllata.
+\end{itemize}
+
+\subsection{Asincrono ed event-driven: robustezza e complessità}
+Il Piano Triennale indica l’evoluzione verso notifiche asincrone di variazioni su dati precedentemente fruiti e verso scambi asincroni di grandi moli di dati \cite{piano_triennale_2024_2026}. Questo richiama un paradigma event-driven: l’ente “fonte” produce eventi (cambiamento), l’ente “fruitore” li consuma e aggiorna il proprio stato.
+
+I vantaggi sono significativi: disaccoppiamento temporale, maggiore resilienza a picchi, minor dipendenza dalla disponibilità istantanea dell’ente fonte. Però aumenta la complessità: gestione dell’ordinamento, duplicati, idempotenza, esattamente-once (spesso irrealistico), riconciliazione.
+
+\subsection{Caching: performance, ma rischio di incoerenza}
+L’idea di caching locale intelligente è coerente con sistemi distribuiti su larga scala, ma introduce il problema classico dell’invalidazione delle cache. Se la semantica del dato è critica (es. attributi anagrafici o autorizzazioni), la cache deve essere progettata con attenzione: TTL, eventi di invalidazione, o strategie di “read-through”/“write-through”.
+
+La previsione di notifiche asincrone in PDND \cite{piano_triennale_2024_2026} può essere letta come un tentativo di fornire un meccanismo di invalidazione o aggiornamento, riducendo il rischio di disallineamento.
+
+\subsection{Bulk e batch: quando l’API non basta}
+La condivisione di dati in modalità bulk permette analisi data-driven e riduce chiamate ripetitive. In molti contesti reali, però, bulk implica:
+\begin{itemize}[leftmargin=*]
+  \item gestione dei formati e compressione;
+  \item ripartenza da checkpoint in caso di failure;
+  \item coerenza temporale (snapshot) e tracciabilità.
+\end{itemize}
+Un approccio robusto usa job asincroni (submit job → polling/callback → download), pattern tipici di sistemi distribuiti “a pipeline”.
+
+\section{PSN in ottica di sistemi distribuiti: fault domain, region, DR e sovereign controls}
+\subsection{Ridondanza intra-region: fault domain e anti-affinity}
+Nel documento PSN sono presenti elementi tecnici utili a collegare teoria e pratica: fault domain, ridondanza intra-region, anti-affinity, replica dello storage e replica dei database (es. RAC) \cite{psn_descrizione_servizi_2025}. In termini didattici, questi concetti sono la concretizzazione di fault tolerance: separare domini di guasto per evitare che un singolo problema fisico/logico impatti tutte le repliche.
+
+\subsection{Disaster recovery inter-region: resilienza ai disastri “veri”}
+Il DR è il punto in cui la resilienza smette di essere un claim e diventa ingegneria: RPO/RTO, test periodici, runbook, responsabilità chiare. La disponibilità di più region e la replica inter-region \cite{psn_descrizione_servizi_2025} abilitano scenari di continuità anche a fronte di indisponibilità di un’intera region, ma richiedono progettazione applicativa (stateless, database replicati correttamente, DNS/failover).
+
+\subsection{Secure Public Cloud: sovranità e controlli}
+Nel Secure Public Cloud, il documento descrive l’architettura a due componenti (public cloud + security/governance dal PSN) e richiama elementi come gestione chiavi, governance model, hub\&spoke per il traffico, backup nel perimetro PSN, e nel caso “Confidential” elementi di controllo e trasparenza \cite{psn_descrizione_servizi_2025}. Questo conferma che il tema non è “cloud sì/no”, ma \emph{quale modello di responsabilità condivisa} e quali controlli si riescono a implementare in modo sostenibile.
+
+\section{Osservabilità e operation: il lato spesso dimenticato dei sistemi distribuiti}
+\subsection{Perché osservabilità è parte dell’architettura}
+In un sistema distribuito reale, soprattutto in produzione, l’errore non è un’eccezione: è una condizione prevista. Per questo logging, metriche e alerting non sono “optional”. Inoltre, per sistemi che gestiscono dati pubblici e processi amministrativi, audit e tracciatura diventano requisiti non solo tecnici ma anche organizzativi.
+
+Il Piano Triennale collega la cybersicurezza a modelli di gestione e processi \cite{piano_triennale_2024_2026}. Questo è coerente con l’idea che sicurezza e resilienza sono proprietà emergenti dell’intero sistema socio-tecnico.
+
+\subsection{Caso di studio operativo: servizi Sogei/AGENAS come esempio}
+Nei materiali Sogei/AGENAS compaiono elementi fortemente “operational”: ALM, standard ISO, customer care, SOC, IAM, DR con test periodici, SIEM e centralizzazione log \cite{pnrr_sistema_gestione_controllo}. Anche senza trasformare questo in un capitolo “aziendale”, è utile come esempio didattico:
+
+\begin{tcolorbox}[colback=WhiteSmoke, width=\linewidth, arc=1mm, auto outer arc, title=Collegamento didattico (operation e resilienza)]
+In un ecosistema distribuito nazionale, l’infrastruttura (cloud, replica, region) è necessaria ma non sufficiente: servono presidi operativi (SOC, incident response, change management, esercitazioni di DR). La resilienza non è solo ridondanza: è capacità di rilevare, contenere e ripristinare.
+\end{tcolorbox}
+
+\section{Discussione critica (prudente): benefici, trade-off e condizioni di successo}
+\subsection{Benefici attesi e loro coerenza con l’approccio distribuito}
+Se realizzato bene, il disegno PNRR/PSN/PDND promette benefici concreti:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Interoperabilità più “industriale”}: passaggio da integrazioni bilaterali a e-service catalogati, con regole condivise \cite{piano_triennale_2024_2026}.
+  \item \textbf{Resilienza e continuità}: infrastrutture con fault domain, replica, DR, riduzione di CED obsoleti \cite{piano_triennale_2024_2026, psn_descrizione_servizi_2025}.
+  \item \textbf{Migliore governance}: standardizzazione, qualificazione e criteri comuni di sicurezza, riducendo disomogeneità.
+  \item \textbf{Efficienza}: razionalizzazione di costi e riduzione duplicazioni (once-only).
+\end{itemize}
+
+\subsection{Concentrazione del rischio e “logical choke points”}
+Un rischio tipico delle piattaforme comuni è la nascita di punti di strozzatura logici: non necessariamente un singolo server, ma un insieme di componenti (identità, cataloghi, gestione chiavi, policy) che diventa critico per tanti servizi a valle.
+Questo non implica che il modello precedente fosse più sicuro; tuttavia, cambia la natura del rischio: la superficie d’attacco può essere più controllata, ma il \emph{valore} di un attacco riuscito può aumentare.
+
+\subsection{Fattore umano e supply chain}
+In ambienti complessi, il fattore umano (phishing, errori di configurazione, gestione credenziali, permessi eccessivi) è spesso il vettore principale. Inoltre, la supply chain (fornitori, integrazioni, dipendenze software) diventa parte del perimetro. La transizione al cloud può migliorare patching e standardizzazione, ma richiede anche competenze nuove negli enti (RTD, cloud governance) \cite{piano_triennale_2024_2026}.
+
+\subsection{Lock-in e dipendenza operativa}
+Il Piano Triennale cita esplicitamente la mitigazione del lock-in come obiettivo \cite{piano_triennale_2024_2026}. Nella pratica, però, il lock-in non è solo tecnologico (API specifiche, PaaS) ma anche operativo (processi, strumenti, competenze). Una strategia prudente consiste nel:
+\begin{itemize}[leftmargin=*]
+  \item progettare contratti API e dati con portabilità in mente;
+  \item distinguere ciò che è “core” (da mantenere più portabile) da ciò che è “commodity”;
+  \item mantenere capacità interne minime di controllo e auditing.
+\end{itemize}
+
+\subsection{Mini-griglia: rischi, impatti e mitigazioni (sintesi)}
+\begin{center}
+\begin{tabular}{|p{0.28\linewidth}|p{0.32\linewidth}|p{0.32\linewidth}|}
+\hline
+\textbf{Rischio} & \textbf{Impatto} & \textbf{Mitigazioni (principio)} \\
+\hline
+Concentrazione (piattaforme comuni) & Impatto più ampio di incidenti su componenti chiave & Segmentazione, least privilege, DR testato, audit, logging centralizzato e accessibile \\
+\hline
+Errori operativi / misconfig & Incidenti frequenti, difficili da diagnosticare & Observability, change management, IaC, review, esercitazioni \\
+\hline
+Integrazione “solo tecnica” (API senza semantica) & Interoperabilità fragile e costosa nel tempo & Standard semantici, versioning, deprecazione, governance delle API \\
+\hline
+Lock-in (tecnico/operativo) & Costi futuri e ridotta autonomia decisionale & Strategie multi-vendor dove utile, portabilità dati, competenze interne \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Conclusioni}
+La trasformazione digitale della PA italiana descritta dai documenti analizzati può essere letta come un tentativo di superare la frammentazione storica attraverso piattaforme comuni e un percorso di migrazione verso il cloud. In ottica di sistemi distribuiti, la transizione evidenzia che ``centralizzazione'' e ``distribuzione'' non sono opposti netti: aumenta la centralità della governance (regole, cataloghi, qualificazione, processi) mentre l’infrastruttura e le architetture adottate sono intrinsecamente distribuite (cloud, replica, fault domain, asincronia, microservizi).
+
+Il successo dipende da condizioni concrete: capacità operativa, osservabilità, sicurezza by design, gestione del cambiamento, competenze e chiarezza delle responsabilità tra enti e fornitori. In questo senso, il disegno PNRR/PSN/PDND appare coerente con molti principi dei sistemi distribuiti, ma richiede disciplina ingegneristica e organizzativa per evitare che la complessità si sposti semplicemente “più in alto” senza essere davvero governata.
+
+\printbibliography
+
+\end{document}
