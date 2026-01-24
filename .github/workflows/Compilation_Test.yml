@@ -12,10 +12,10 @@ jobs:
       - name: Compile files
         uses: xu-cheng/latex-action@v4
         with:
-          working_directory: Report
+          working_directory: Report/Report
           root_file: Report.tex
       - name: Upload compiled file
         uses: actions/upload-artifact@v6
         with: 
-          name: Naval-VHF-Report
-          path: Report/Report.pdf
+          name: Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN
+          path: Report/Report/Report.pdf
