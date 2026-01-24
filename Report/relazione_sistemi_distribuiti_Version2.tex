@@ -63,7 +63,7 @@
 	\fancyhead[L]{\footnotesize{\thetitle}}
 	\fancyfoot{}
 	\fancyfoot[R]{\footnotesize{\bf{\thepage}}}
-	\fancyfoot[L]{\footnotesize{Relazione}}
+	\fancyfoot[L]{\footnotesize{Progetto corso Sistemi Distribuiti}}
 	
 	\maketitle
 	
@@ -91,28 +91,28 @@
 	
 	Questo tipo di frammentazione produce conseguenze pratiche. La prima è l’inefficienza: procedure simili vengono implementate più volte, con costi ripetuti e qualità variabile. La seconda è la fragilità: un sistema complesso composto da molte ``isole'' si integra con difficoltà e spesso non riesce a offrire servizi end-to-end coerenti. La terza è la sicurezza: la postura cyber è tanto forte quanto il suo anello più debole, e in un mosaico di enti con livelli diversi diventa difficile fissare standard e verificarne l’applicazione.
 	
-	In questo contesto, il Piano Triennale osserva che molte infrastrutture risultano carenti sotto il profilo strutturale e organizzativo e prive di requisiti adeguati di sicurezza e affidabilità, con rischi di indisponibilità dei servizi e rischi cyber \cite{piano_triennale_2024_2026}. La necessità di intervenire non è quindi descritta solo come modernizzazione, ma come riduzione di rischi già presenti.
+	In questo contesto, il Piano Triennale osserva che molte infrastrutture risultano carenti sotto il profilo strutturale e organizzativo e prive di requisiti adeguati di sicurezza e affidabilità, con rischi di indisponibilità dei servizi e rischi cyber \cite{piano-triennale-2024-2026}. La necessità di intervenire non è quindi descritta solo come modernizzazione, ma come riduzione di rischi già presenti.
 	
 	\section{PNRR e governance: perché la trasformazione è anche organizzativa}
-	Il PNRR agisce sia come fonte di finanziamento sia come meccanismo di indirizzo: obiettivi, milestone, target e misure di controllo trasformano la digitalizzazione in un programma coordinato e monitorabile \cite{pnrr_sistema_gestione_controllo}. Questo aspetto è importante perché cambia la dinamica tipica degli interventi ``a progetto'' isolati: la migrazione al cloud, l’adozione di piattaforme nazionali e la costruzione dell’interoperabilità diventano parte di un percorso che deve essere pianificato e rendicontato.
+	Il PNRR agisce sia come fonte di finanziamento sia come meccanismo di indirizzo: obiettivi, milestone, target e misure di controllo trasformano la digitalizzazione in un programma coordinato e monitorabile \cite{pnrr-sigeco-dtd-v5}. Questo aspetto è importante perché cambia la dinamica tipica degli interventi ``a progetto'' isolati: la migrazione al cloud, l’adozione di piattaforme nazionali e la costruzione dell’interoperabilità diventano parte di un percorso che deve essere pianificato e rendicontato.
 	
 	In altri termini, anche quando un protocollo non descrive direttamente una tecnologia, può incidere sulla tecnologia nella misura in cui definisce vincoli, priorità, responsabilità e tempi. È una forma di centralizzazione indiretta: non impone un unico software, ma spinge verso scelte compatibili con la strategia nazionale (cloud-first, interoperabilità via piattaforma, standard condivisi) e scoraggia investimenti che aumentano la frammentazione.
 	
 	\section{Il Piano Triennale 2024--2026: servizi, interoperabilità e piattaforme nazionali}
-	Il \emph{Piano Triennale per l’informatica nella PA 2024--2026} descrive un impianto che collega la trasformazione dei servizi alla necessità di un framework uniforme. In particolare, nella parte dedicata ai servizi, viene promossa l’architettura a microservizi come soluzione agile e scalabile, capace di standardizzare processi e facilitare il change management \cite{piano_triennale_2024_2026}. L’enfasi non è solo tecnologica: viene esplicitato che la transizione richiede formazione continua, coinvolgimento degli stakeholder, monitoraggio dell’impatto e comunicazione efficace.
+	Il \emph{Piano Triennale per l’informatica nella PA 2024--2026} descrive un impianto che collega la trasformazione dei servizi alla necessità di un framework uniforme. In particolare, nella parte dedicata ai servizi, viene promossa l’architettura a microservizi come soluzione agile e scalabile, capace di standardizzare processi e facilitare il change management \cite{piano-triennale-2024-2026}. L’enfasi non è solo tecnologica: viene esplicitato che la transizione richiede formazione continua, coinvolgimento degli stakeholder, monitoraggio dell’impatto e comunicazione efficace.
 	
 	\subsection{Microservizi e riuso: una promessa e una condizione}
-	Il Piano sottolinea che per gli enti con scarse risorse o know-how, architetture modulari e riuso di servizi sviluppati da altri enti possono ridurre il gap e velocizzare la digitalizzazione \cite{piano_triennale_2024_2026}. Questa idea ha una conseguenza diretta sul modello complessivo: se i servizi sono componibili e riusabili, serve un modo per scoprirli, accedervi e regolare l’accesso in maniera standard. In altre parole, l’approccio ``a microservizi'' diventa credibile a scala nazionale solo se esiste un livello di interoperabilità governato.
+	Il Piano sottolinea che per gli enti con scarse risorse o know-how, architetture modulari e riuso di servizi sviluppati da altri enti possono ridurre il gap e velocizzare la digitalizzazione \cite{piano-triennale-2024-2026}. Questa idea ha una conseguenza diretta sul modello complessivo: se i servizi sono componibili e riusabili, serve un modo per scoprirli, accedervi e regolare l’accesso in maniera standard. In altre parole, l’approccio ``a microservizi'' diventa credibile a scala nazionale solo se esiste un livello di interoperabilità governato.
 	
 	\subsection{PDND: Piattaforma Digitale Nazionale Dati}
-	La \textbf{PDND} (Piattaforma Digitale Nazionale Dati) è presentata come il \emph{layer focale} per la condivisione di dati e processi tra amministrazioni, con l’obiettivo di attuare il principio \emph{once-only} (la PA non dovrebbe richiedere a cittadini e imprese dati che già possiede) \cite{piano_triennale_2024_2026}. La piattaforma è descritta come strumento che gestisce:
+	La \textbf{PDND} (Piattaforma Digitale Nazionale Dati) è presentata come il \emph{layer focale} per la condivisione di dati e processi tra amministrazioni, con l’obiettivo di attuare il principio \emph{once-only} (la PA non dovrebbe richiedere a cittadini e imprese dati che già possiede) \cite{piano-triennale-2024-2026}. La piattaforma è descritta come strumento che gestisce:
 	\begin{itemize}[leftmargin=*]
 		\item autenticazione e autorizzazione;
 		\item raccolta e conservazione delle informazioni relative ad accessi e transazioni;
 		\item regole condivise per semplificare gli accordi di interoperabilità, riducendo oneri e procedure.
 	\end{itemize}
 	
-	La PDND consente alle amministrazioni di pubblicare \emph{e-service}, cioè servizi digitali erogati tramite \textbf{API} (Application Programming Interface) REST, o SOAP per retrocompatibilità, con attributi minimi necessari alla fruizione; tali API vengono registrate nel catalogo pubblico degli e-service \cite{piano_triennale_2024_2026}. La presenza di un catalogo e di regole comuni è uno degli elementi più chiari della centralizzazione di governance: non è più necessario (almeno in teoria) negoziare ogni integrazione in modo completamente bilaterale.
+	La PDND consente alle amministrazioni di pubblicare \emph{e-service}, cioè servizi digitali erogati tramite \textbf{API} (Application Programming Interface) REST, o SOAP per retrocompatibilità, con attributi minimi necessari alla fruizione; tali API vengono registrate nel catalogo pubblico degli e-service \cite{piano-triennale-2024-2026}. La presenza di un catalogo e di regole comuni è uno degli elementi più chiari della centralizzazione di governance: non è più necessario (almeno in teoria) negoziare ogni integrazione in modo completamente bilaterale.
 	
 	\subsection{Evoluzioni previste per PDND: bulk, asincrono, caching, delega}
 	I documenti riportano anche l’elenco di evoluzioni attese per la PDND nel triennio:
@@ -125,33 +125,33 @@
 		\item delega ad un aderente per operazioni sul catalogo e gestione delle richieste, inclusa analisi dei rischi;
 		\item pubblicazione open data via API con catalogazione secondo norme pertinenti.
 	\end{enumerate}
-	Tale elenco è importante perché mostra che l’interoperabilità non è considerata come una singola API ``di consultazione'', ma come un insieme di modalità di scambio dati con complessità crescente, includendo aspetti operativi (delega, analisi rischi, caching, bulk) \cite{piano_triennale_2024_2026}.
+	Tale elenco è importante perché mostra che l’interoperabilità non è considerata come una singola API ``di consultazione'', ma come un insieme di modalità di scambio dati con complessità crescente, includendo aspetti operativi (delega, analisi rischi, caching, bulk) \cite{piano-triennale-2024-2026}.
 	
 	\subsection{Piattaforme nazionali e basi dati di interesse nazionale}
-	Il Piano Triennale descrive anche un ecosistema di piattaforme nazionali che erogano servizi a cittadini, imprese e altre PA: ad esempio pagoPA, App IO, SEND (Servizio Notifiche Digitali), SPID (Sistema Pubblico di Identità Digitale), CIE (Carta di Identità Elettronica), NoiPA, Fascicolo Sanitario Elettronico (FSE) 2.0, SUAP/SUE e basi dati di interesse nazionale come ANPR (Anagrafe Nazionale della Popolazione Residente) \cite{piano_triennale_2024_2026}. Questi componenti hanno un obiettivo comune: migliorare servizi esistenti e uniformare esperienze e processi.
+	Il Piano Triennale descrive anche un ecosistema di piattaforme nazionali che erogano servizi a cittadini, imprese e altre PA: ad esempio pagoPA, App IO, SEND (Servizio Notifiche Digitali), SPID (Sistema Pubblico di Identità Digitale), CIE (Carta di Identità Elettronica), NoiPA, Fascicolo Sanitario Elettronico (FSE) 2.0, SUAP/SUE e basi dati di interesse nazionale come ANPR (Anagrafe Nazionale della Popolazione Residente) \cite{piano-triennale-2024-2026}. Questi componenti hanno un obiettivo comune: migliorare servizi esistenti e uniformare esperienze e processi.
 	
 	In questa sede interessa soprattutto un effetto sistemico: piattaforme nazionali e basi dati centrali spostano alcune funzioni ``core'' dal livello dell’ente al livello nazionale, rendendo più possibile l’uniformità ma anche aumentando l’importanza di alcuni nodi del sistema-paese.
 	
 	\section{Infrastrutture e cloud: strategia Cloud Italia e PSN}
-	La sezione infrastrutture del Piano Triennale inquadra la strategia \textbf{Cloud Italia} (pubblicata nel 2021 da Dipartimento per la Trasformazione Digitale e Agenzia per la Cybersicurezza Nazionale) come un percorso attuativo che risponde a tre sfide: autonomia tecnologica, controllo sui dati e resilienza dei servizi \cite{piano_triennale_2024_2026}. Il principio \emph{cloud-first} viene indicato come criterio prioritario: per nuovi progetti o nuovi servizi si deve valutare in via prioritaria l’adozione del cloud, motivando eventuali esiti negativi.
+	La sezione infrastrutture del Piano Triennale inquadra la strategia \textbf{Cloud Italia} (pubblicata nel 2021 da Dipartimento per la Trasformazione Digitale e Agenzia per la Cybersicurezza Nazionale) come un percorso attuativo che risponde a tre sfide: autonomia tecnologica, controllo sui dati e resilienza dei servizi \cite{piano-triennale-2024-2026}. Il principio \emph{cloud-first} viene indicato come criterio prioritario: per nuovi progetti o nuovi servizi si deve valutare in via prioritaria l’adozione del cloud, motivando eventuali esiti negativi.
 	
-	La stessa sezione sottolinea che non si tratta di una sola operazione tecnologica: la migrazione è anche occasione per ridurre debito tecnologico, mitigare lock-in, ridurre costi di manutenzione di data center obsoleti e incrementare la postura di sicurezza \cite{piano_triennale_2024_2026}.
+	La stessa sezione sottolinea che non si tratta di una sola operazione tecnologica: la migrazione è anche occasione per ridurre debito tecnologico, mitigare lock-in, ridurre costi di manutenzione di data center obsoleti e incrementare la postura di sicurezza \cite{piano-triennale-2024-2026}.
 	
 	\subsection{PSN: Polo Strategico Nazionale}
-	Il \textbf{PSN} (Polo Strategico Nazionale) viene descritto nel Piano Triennale come infrastruttura ad alta affidabilità localizzata sul territorio nazionale, promossa per la razionalizzazione e il consolidamento dei Centri di Elaborazione Dati (CED) della PA, garantendo qualità, sicurezza, scalabilità, sostenibilità economica e continuità operativa \cite{piano_triennale_2024_2026}. Il Piano richiama anche la metodologia di classificazione di dati e servizi e la qualificazione dei fornitori di cloud pubblico, così da indirizzare la migrazione verso PSN o verso cloud qualificati coerenti con requisiti.
+	Il \textbf{PSN} (Polo Strategico Nazionale) viene descritto nel Piano Triennale come infrastruttura ad alta affidabilità localizzata sul territorio nazionale, promossa per la razionalizzazione e il consolidamento dei Centri di Elaborazione Dati (CED) della PA, garantendo qualità, sicurezza, scalabilità, sostenibilità economica e continuità operativa \cite{piano-triennale-2024-2026}. Il Piano richiama anche la metodologia di classificazione di dati e servizi e la qualificazione dei fornitori di cloud pubblico, così da indirizzare la migrazione verso PSN o verso cloud qualificati coerenti con requisiti.
 	
 	Qui emerge un punto centrale: la transizione non significa ``tutto su PSN''. È previsto un insieme di soluzioni (PSN, infrastrutture della PA adeguate, cloud qualificati), con criteri di classificazione e qualificazione. È una centralizzazione di indirizzo e di regole, più che una centralizzazione fisica assoluta.
 	
 	\subsection{SPC: Sistema Pubblico di Connettività}
-	Il Piano richiama il \textbf{SPC} (Sistema Pubblico di Connettività) come rete e insieme di servizi di connettività che consente l’interscambio riservato di informazioni, l’interoperabilità tra reti delle amministrazioni e l’interconnessione a Internet \cite{piano_triennale_2024_2026}. Tuttavia, lo stesso testo osserva che SPC deve trovare evoluzione nella nuova logica cloud: viene esplicitata la natura del cloud come decentrata, policentrica e federata, in grado di rendere possibile il disegno originario dello SPC salvaguardando autonomia degli enti e neutralità tecnologica \cite{piano_triennale_2024_2026}.
+	Il Piano richiama il \textbf{SPC} (Sistema Pubblico di Connettività) come rete e insieme di servizi di connettività che consente l’interscambio riservato di informazioni, l’interoperabilità tra reti delle amministrazioni e l’interconnessione a Internet \cite{piano-triennale-2024-2026}. Tuttavia, lo stesso testo osserva che SPC deve trovare evoluzione nella nuova logica cloud: viene esplicitata la natura del cloud come decentrata, policentrica e federata, in grado di rendere possibile il disegno originario dello SPC salvaguardando autonomia degli enti e neutralità tecnologica \cite{piano-triennale-2024-2026}.
 	
 	Questo passaggio è rilevante perché mostra esplicitamente la coesistenza di due esigenze: ridurre frammentazione e aumentare coordinamento (spinta centralizzante), ma farlo attraverso un paradigma tecnologico che di per sé è distribuito e può essere federato.
 	
 	\section{Il documento PSN 2025: servizi, sovranità, resilienza e modelli di erogazione}
-	La \emph{Descrizione nuovi servizi 2025} del PSN \cite{psn_descrizione_servizi_2025} fornisce un livello di dettaglio tecnico-operativo che completa la visione del Piano Triennale. In particolare, esplicita che l’offerta PSN include più aree e modelli: \emph{PSN Managed}, \emph{Secure Public Cloud} (SPC) e \emph{Industry Standard}. La presenza di questi diversi modelli rende il quadro più chiaramente ibrido: non esiste un’unica soluzione, ma un catalogo che integra tecnologie e provider diversi, aggiungendo presidi di governance e sicurezza.
+	La \emph{Descrizione nuovi servizi 2025} del PSN \cite{psn-servizi-2025} fornisce un livello di dettaglio tecnico-operativo che completa la visione del Piano Triennale. In particolare, esplicita che l’offerta PSN include più aree e modelli: \emph{PSN Managed}, \emph{Secure Public Cloud} (SPC) e \emph{Industry Standard}. La presenza di questi diversi modelli rende il quadro più chiaramente ibrido: non esiste un’unica soluzione, ma un catalogo che integra tecnologie e provider diversi, aggiungendo presidi di governance e sicurezza.
 	
 	\subsection{PSN Managed (Oracle Alloy): resilienza intra-region e DR inter-region}
-	Nel documento, una parte rilevante descrive l’estensione dei servizi PSN Managed basati su tecnologia Oracle Alloy. Il testo insiste su aspetti come residenza dei dati in Italia, isolamento fisico/logico dei workload, controlli di sicurezza avanzati, gestione delle chiavi e integrazione con servizi PSN (identità, logging, backup, sicurezza) \cite{psn_descrizione_servizi_2025}.
+	Nel documento, una parte rilevante descrive l’estensione dei servizi PSN Managed basati su tecnologia Oracle Alloy. Il testo insiste su aspetti come residenza dei dati in Italia, isolamento fisico/logico dei workload, controlli di sicurezza avanzati, gestione delle chiavi e integrazione con servizi PSN (identità, logging, backup, sicurezza) \cite{psn-servizi-2025}.
 	
 	Dal punto di vista della continuità operativa, sono richiamati concetti come:
 	\begin{itemize}[leftmargin=*]
@@ -161,10 +161,10 @@
 		\item assenza di downtime programmato per maintenance,
 		\item disponibilità di più region (Nord e Sud) e possibilità di disaster recovery tra region con RPO definiti in convenzione.
 	\end{itemize}
-	Questi elementi descrivono un’infrastruttura distribuita e resiliente, che però viene resa ``sovrana'' e governata tramite controlli e gestione operativa in carico al PSN \cite{psn_descrizione_servizi_2025}.
+	Questi elementi descrivono un’infrastruttura distribuita e resiliente, che però viene resa ``sovrana'' e governata tramite controlli e gestione operativa in carico al PSN \cite{psn-servizi-2025}.
 	
 	\subsection{Secure Public Cloud: hyperscaler con controlli di governance e sovranità}
-	Il documento descrive il \textbf{Secure Public Cloud} come accesso a region pubbliche di hyperscaler selezionati, con l’aggiunta di elementi di sicurezza e governance erogati dai data center PSN. Viene presentata un’architettura a due componenti: la parte public cloud (necessariamente su territorio nazionale) e la componente security \& governance (gestione chiavi, backup, policy, controllo traffico, ecc.) \cite{psn_descrizione_servizi_2025}.
+	Il documento descrive il \textbf{Secure Public Cloud} come accesso a region pubbliche di hyperscaler selezionati, con l’aggiunta di elementi di sicurezza e governance erogati dai data center PSN. Viene presentata un’architettura a due componenti: la parte public cloud (necessariamente su territorio nazionale) e la componente security \& governance (gestione chiavi, backup, policy, controllo traffico, ecc.) \cite{psn-servizi-2025}.
 	
 	Tra gli elementi chiave citati:
 	\begin{itemize}[leftmargin=*]
@@ -175,13 +175,13 @@
 		\item scenari di confidential computing (in particolare nella variante Confidential Azure) con meccanismi aggiuntivi di trasparenza e controllo.
 	\end{itemize}
 	
-	Anche qui, la logica è coerente con il carattere ibrido: si sfrutta l'infrastruttura distribuita degli hyperscaler, ma si tenta di riportare controllo e auditabilità entro un perimetro nazionale e contrattuale \cite{psn_descrizione_servizi_2025}.
+	Anche qui, la logica è coerente con il carattere ibrido: si sfrutta l'infrastruttura distribuita degli hyperscaler, ma si tenta di riportare controllo e auditabilità entro un perimetro nazionale e contrattuale \cite{psn-servizi-2025}.
 	
 	\subsection{Osservabilità e logging: da requisito tecnico a requisito di governance}
-	Il documento PSN include riferimenti espliciti a logging, logging analytics, monitoring, notification e strumenti di observability, oltre a servizi di security monitoring e assessment \cite{psn_descrizione_servizi_2025}. Questo è un punto importante perché la visibilità operativa diventa condizione per la governance: senza log e audit coerenti, non è possibile né sicurezza né accountability.
+	Il documento PSN include riferimenti espliciti a logging, logging analytics, monitoring, notification e strumenti di observability, oltre a servizi di security monitoring e assessment \cite{psn-servizi-2025}. Questo è un punto importante perché la visibilità operativa diventa condizione per la governance: senza log e audit coerenti, non è possibile né sicurezza né accountability.
 	
 	\section{Sicurezza e gestione del rischio nella visione del Piano Triennale}
-	Il Piano Triennale dedica un capitolo alla sicurezza informatica, inquadrandola come elemento necessario per garantire la sicurezza del Paese e la continuità dei servizi pubblici \cite{piano_triennale_2024_2026}. Viene richiamata la riforma dell’architettura nazionale cyber con la nascita dell’\textbf{ACN} (Agenzia per la Cybersicurezza Nazionale), e viene indicata la necessità di:
+	Il Piano Triennale dedica un capitolo alla sicurezza informatica, inquadrandola come elemento necessario per garantire la sicurezza del Paese e la continuità dei servizi pubblici \cite{piano-triennale-2024-2026}. Viene richiamata la riforma dell’architettura nazionale cyber con la nascita dell’\textbf{ACN} (Agenzia per la Cybersicurezza Nazionale), e viene indicata la necessità di:
 	\begin{itemize}[leftmargin=*]
 		\item modelli di gestione centralizzati della cybersicurezza;
 		\item processi di gestione e mitigazione del rischio cyber, inclusa gestione delle terze parti;
@@ -191,7 +191,7 @@
 	Questi elementi, letti insieme a PSN e PDND, rafforzano l’idea che la centralizzazione non sia solo infrastrutturale, ma anche di \emph{processi} e di \emph{metodi}.
 	
 	\section{Caso di studio operativo: estratti AGENAS/Sogei (processi, DR, SOC, IAM)}
-	Negli estratti del protocollo AGENAS relativi ai servizi Sogei, compaiono elementi tipici di una gestione ICT industrializzata: processi certificati (ISO 9001, ISO/IEC 27001), ALM (Application Lifecycle Management), metodologie Agile/DevOps, misurazione dell’effort, customer care strutturato, e servizi di continuità operativa e disaster recovery con test periodici \cite{pnrr_sistema_gestione_controllo}.
+	Negli estratti del protocollo AGENAS relativi ai servizi Sogei, compaiono elementi tipici di una gestione ICT industrializzata: processi certificati (ISO 9001, ISO/IEC 27001), ALM (Application Lifecycle Management), metodologie Agile/DevOps, misurazione dell’effort, customer care strutturato, e servizi di continuità operativa e disaster recovery con test periodici \cite{pnrr-sigeco-dtd-v5}.
 	
 	Sono presenti dettagli operativi particolarmente rilevanti:
 	\begin{itemize}[leftmargin=*]
@@ -219,7 +219,7 @@
 	\begin{itemize}[leftmargin=*]
 		\item cloud e multi-region con replica e DR;
 		\item coesistenza di PSN Managed e Secure Public Cloud con hyperscaler;
-		\item possibilità di infrastrutture cloud federate della PA e concetti di edge/infrastrutture di prossimità (citati nel Piano Triennale) \cite{piano_triennale_2024_2026}.
+		\item possibilità di infrastrutture cloud federate della PA e concetti di edge/infrastrutture di prossimità (citati nel Piano Triennale) \cite{piano-triennale-2024-2026}.
 	\end{itemize}
 	
 	Ne risulta un assetto che può essere definito ``ibrido'' non come compromesso generico, ma perché la governance e alcuni servizi diventano più centrali, mentre l’esecuzione tecnica rimane distribuita per ragioni di resilienza, scalabilità e architettura cloud.
@@ -258,7 +258,7 @@
 	\subsection{Gestione delle terze parti e supply chain}
 	Il modello proposto include hyperscaler e componenti di mercato; inoltre, molte PA continueranno a usare fornitori esterni per sviluppo, migrazione e manutenzione. Questo introduce un rischio di supply chain: vulnerabilità in software di terze parti, catene CI/CD, librerie, tool di gestione, e accessi di supporto.
 	
-	I documenti richiamano la necessità di processi di gestione del rischio anche rispetto alle terze parti \cite{piano_triennale_2024_2026}. La criticità qui è che la gestione delle terze parti non è un adempimento burocratico: richiede inventario aggiornato, controllo degli accessi, segmentazione, audit, e capacità di revoca rapida.
+	I documenti richiamano la necessità di processi di gestione del rischio anche rispetto alle terze parti \cite{piano-triennale-2024-2026}. La criticità qui è che la gestione delle terze parti non è un adempimento burocratico: richiede inventario aggiornato, controllo degli accessi, segmentazione, audit, e capacità di revoca rapida.
 	
 	\subsection{Interoperabilità: la fragilità dei contratti e della semantica}
 	La PDND introduce un catalogo e regole comuni. Tuttavia, l’interoperabilità può fallire anche se ``l’API esiste'', quando:
@@ -269,10 +269,10 @@
 		\item i fruitori implementano cache o repliche senza governance.
 	\end{itemize}
 	
-	Gli appunti citano evoluzioni (notifiche asincrone e caching intelligente) \cite{piano_triennale_2024_2026} proprio perché il problema è noto: l’interoperabilità a scala nazionale non è solo ``mettere online una query'', ma garantire continuità, aggiornamento e comprensione condivisa del dato.
+	Gli appunti citano evoluzioni (notifiche asincrone e caching intelligente) \cite{piano-triennale-2024-2026} proprio perché il problema è noto: l’interoperabilità a scala nazionale non è solo ``mettere online una query'', ma garantire continuità, aggiornamento e comprensione condivisa del dato.
 	
 	\subsection{Resilienza e disponibilità: la ridondanza non basta senza prove}
-	La resilienza promessa dal cloud e dal PSN dipende da come vengono configurati i sistemi applicativi. Il documento PSN parla di fault domain e region, e cita DR inter-region come possibilità \cite{psn_descrizione_servizi_2025}. Tuttavia:
+	La resilienza promessa dal cloud e dal PSN dipende da come vengono configurati i sistemi applicativi. Il documento PSN parla di fault domain e region, e cita DR inter-region come possibilità \cite{psn-servizi-2025}. Tuttavia:
 	\begin{itemize}[leftmargin=*]
 		\item un’applicazione può essere ospitata in cloud ma restare fragile (dipendenze esterne, configurazioni errate, single points of failure logici);
 		\item un piano di DR senza prove periodiche può fallire nel momento del bisogno;
@@ -282,7 +282,7 @@
 	Gli estratti AGENAS/Sogei sottolineano test semestrali e annuali: questo è un indicatore concreto di maturità. La criticità è che tale maturità deve essere generalizzata, altrimenti la resilienza rimane teorica o disomogenea.
 	
 	\subsection{Lock-in: non solo tecnologico, ma anche di processo e competenze}
-	Il Piano Triennale cita la mitigazione del lock-in come obiettivo della strategia cloud \cite{piano_triennale_2024_2026}. È un obiettivo realistico solo se si riconosce che il lock-in ha almeno tre componenti:
+	Il Piano Triennale cita la mitigazione del lock-in come obiettivo della strategia cloud \cite{piano-triennale-2024-2026}. È un obiettivo realistico solo se si riconosce che il lock-in ha almeno tre componenti:
 	\begin{itemize}[leftmargin=*]
 		\item \textbf{tecnologica}: uso di servizi proprietari difficili da migrare;
 		\item \textbf{operativa}: strumenti e runbook costruiti intorno a una piattaforma;
