@@ -43,7 +43,24 @@ Analysis of the cloud infrastructure defined by Italy’s National Recovery and 
 
 </summary>
 
-
+![image_0001](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0001.png?raw=true)
+![image_0002](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0002.png?raw=true)
+![image_0003](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0003.png?raw=true)
+![image_0004](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0004.png?raw=true)
+![image_0005](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0005.png?raw=true)
+![image_0006](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0006.png?raw=true)
+![image_0007](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0007.png?raw=true)
+![image_0008](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0008.png?raw=true)
+![image_0009](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0009.png?raw=true)
+![image_0010](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0010.png?raw=true)
+![image_0011](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0011.png?raw=true)
+![image_0012](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0012.png?raw=true)
+![image_0013](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0013.png?raw=true)
+![image_0014](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0014.png?raw=true)
+![image_0015](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0015.png?raw=true)
+![image_0016](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0016.png?raw=true)
+![image_0017](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0017.png?raw=true)
+![image_0018](https://github.com/R0mb0/Analysis_of_Italys_PNRR_Cloud_Infrastructure_and_the_PSN/blob/main/ReadMe_Imgs/Slides/0018.png?raw=true)
 
 </details>
 
