@@ -160,26 +160,12 @@ version={4.0},
 			\item Tesi: \textbf{governance più centralizzata}, esecuzione \textbf{distribuita (cloud)}
 			\item Focus: \textbf{PDND} (interoperabilità) e \textbf{PSN} (infrastruttura)
 		\end{itemize}
+		
+		
 		\vspace{2mm}
-		
-		
 		\begin{center}
-			\zoombox{\includegraphics[scale=0.45]{ecosistema.png}}
+			\zoombox{\includegraphics[scale=0.17]{1.png}}
 		\end{center}
-	\end{frame}
-	
-	%================================================
-	\section{Prima della transizione}
-	%================================================
-	\begin{frame}{Prima della transizione}
-		\begin{itemize}
-			\item Sistemi a \textbf{silos} (ogni ente ``fa da sé'')
-			\item Integrazioni spesso \textbf{bilaterali} (caso per caso)
-			\item Sicurezza e continuità: \textbf{molto disomogenee}
-		\end{itemize}
-		\vspace{2mm}
-		% Immagine consigliata: schema a isole / integrazioni punto-punto
-		% \includegraphics[width=0.75\linewidth]{prima_vs_dopo.png}
 	\end{frame}
 	
 	\begin{frame}{Transizione: prima vs dopo}
@@ -190,118 +176,177 @@ version={4.0},
 			Accordi bilaterali & Regole comuni + interoperabilità (PDND)\\
 			Standard variabili & Standardizzazione + controlli\\
 		\end{tabularx}
-		\vspace{2mm}
 		
-		% Immagine consigliata: diagramma a 2 colonne o freccia evolutiva
-		% \includegraphics[width=0.8\linewidth]{before_after.png}
+		\vspace{2mm}
+		\begin{center}
+			\zoombox{\includegraphics[scale=0.15]{2.png}}
+		\end{center}
 	\end{frame}
 	
 	%================================================
 	\section{PNRR e governance}
 	%================================================
 	\begin{frame}{PNRR e governance}
-		\begin{itemize}
-			\item PNRR = \textbf{finanziamento + indirizzo} (milestone/target)
-			\item Spinta a: \textbf{cloud-first}, piattaforme nazionali, interoperabilità
-			\item Effetto: riduzione della frammentazione (ma nuovi trade-off)
-		\end{itemize}
+		
+		
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\begin{itemize}
+					\item PNRR = \textbf{finanziamento + indirizzo} (milestone/target)
+					\item Spinta a: \textbf{cloud-first}, piattaforme nazionali, interoperabilità
+					\item Effetto: riduzione della frammentazione (ma nuovi trade-off)
+				\end{itemize}
+			}&{
+				\vspace*{-1mm}
+			  	\begin{center}
+			  		\zoombox{\includegraphics[scale=0.2]{9.png}}
+			  	\end{center}
+			}
+		\end{tabularx}
+		
+		
 	\end{frame}
 	
 	%================================================
 	\section{Piano Triennale 2024--2026}
 	%================================================
 	\begin{frame}{Piano Triennale 2024--2026}
+		
 		\begin{itemize}
 			\item \textbf{API-first} + principio \textbf{once-only}
 			\item Architetture a \textbf{microservizi} e riuso
 			\item Piattaforme nazionali come \textbf{abilitatori}
 		\end{itemize}
 		
-		\vspace{2mm}
-		% Immagine consigliata: schema "API-first/once-only" oppure flusso dati cittadino->PA
-		% \includegraphics[width=0.8\linewidth]{once_only.png}
+		\vspace*{2mm}
+		\begin{center}
+			\zoombox{\includegraphics[scale=0.15]{3.png}}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}{PDND}
-		\begin{itemize}
-			\item PDND = \textbf{catalogo e-service} + accesso via API
-			\item Gestisce: \textbf{authN/authZ}, tracciamento, regole di accordo
-			\item Obiettivo: interoperabilità \textbf{scalabile} (non ``uno a uno'')
-		\end{itemize}
-		\vspace{2mm}
-		% Immagine consigliata: schema provider -> PDND -> consumer (catalogo al centro)
-		% \includegraphics[width=0.85\linewidth]{pdnd_schema.png}
+		
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.2]{4.png}}
+				\end{center}
+			}&{
+				\begin{itemize}
+					\item PDND = \textbf{catalogo e-service} + accesso via API
+					\item Gestisce: \textbf{authN/authZ}, tracciamento, regole di accordo
+					\item Obiettivo: interoperabilità \textbf{scalabile} (non ``uno a uno'')
+				\end{itemize}
+			}
+		\end{tabularx}
 	\end{frame}
 	
 	%================================================
 	\section{Infrastrutture e cloud}
 	%================================================
-	\begin{frame}{Cloud Italia: perché (in breve)}
+	\begin{frame}{Cloud Italia: perché?}
 		\begin{itemize}
 			\item \textbf{Autonomia} tecnologica e controllo dei dati
 			\item \textbf{Resilienza} e continuità dei servizi
 			\item Migrazione = occasione per ridurre \textbf{debito tecnico} e rischi
 		\end{itemize}
 		
-		\vspace{2mm}
-		% Immagine consigliata: cloud-first pipeline / migrazione (rehost->replatform->rearchitect)
-		% \includegraphics[width=0.8\linewidth]{cloud_migration.png}
+		\vspace*{2mm}
+		\begin{center}
+			\zoombox{\includegraphics[scale=0.3]{5.png}}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}{PSN: ruolo e idea}
-		\begin{itemize}
-			\item PSN = infrastruttura nazionale per \textbf{consolidamento} CED
-			\item Non ``tutto su PSN'': anche \textbf{cloud qualificati} e modelli ibridi
-			\item Governance + sicurezza come valore aggiunto
-		\end{itemize}
 		
-		\vspace{2mm}
-		% Immagine consigliata: schema PSN + cloud qualificati + enti
-		% \includegraphics[width=0.85\linewidth]{psn_overview.png}
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\begin{itemize}
+					\item PSN = infrastruttura nazionale per \textbf{consolidamento} CED
+					\item Non ``tutto su PSN'': anche \textbf{cloud qualificati} e modelli ibridi
+					\item Governance + sicurezza come valore aggiunto
+				\end{itemize}
+			}&{
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.2]{6.png}}
+				\end{center}
+			}
+		\end{tabularx}
+		
 	\end{frame}
 	
 	%================================================
 	\section{PSN 2025: modelli di erogazione}
 	%================================================
-	\begin{frame}{PSN 2025: modelli (1 messaggio)}
-		\begin{itemize}
-			\item PSN Managed (es. Oracle Alloy)
-			\item Secure Public Cloud (Azure/GCP con governance PSN)
-			\item Industry Standard (servizi ``di mercato'' integrati)
-		\end{itemize}
-		\vspace{2mm}
-		% Immagine consigliata: 3 blocchi (Managed / SPC / Industry)
-		% \includegraphics[width=0.9\linewidth]{psn_models.png}
+	\begin{frame}{PSN 2025: modelli}
+		
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.2]{7.png}}
+				\end{center}
+				
+			}&{
+				\begin{itemize}
+					\item PSN Managed (es. Oracle Alloy)
+					\item Secure Public Cloud (Azure/GCP con governance PSN)
+					\item Industry Standard (servizi ``di mercato'' integrati)
+				\end{itemize}
+			}
+		\end{tabularx}
+		
 	\end{frame}
 	
 	\begin{frame}{PSN Managed: resilienza}
-		\begin{itemize}
-			\item Ridondanza su \textbf{fault domain}
-			\item Storage e DB con \textbf{replica}
-			\item Maintenance senza downtime (obiettivo)
-			\item DR inter-region: \textbf{opzionale/configurabile}
-		\end{itemize}
-		\vspace{2mm}
-		% Immagine consigliata: schema region con 3 fault domain + freccia verso region DR
-		% \includegraphics[width=0.85\linewidth]{fault_domain_dr.png}
+		
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\begin{itemize}
+					\item Ridondanza su \textbf{fault domain}
+					\item Storage e DB con \textbf{replica}
+					\item Maintenance senza downtime (obiettivo)
+					\item DR inter-region: \textbf{opzionale/configurabile}
+				\end{itemize}
+			}&{
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.23]{8.png}}
+				\end{center}
+			}
+		\end{tabularx}
+		
 	\end{frame}
 	
 	\begin{frame}{Secure Public Cloud}
-		\begin{itemize}
-			\item \textbf{Public cloud} in Italia (hyperscaler)
-			\item \textbf{Security \& governance} nel perimetro PSN
-		\end{itemize}
 		
-		\vspace{1mm}
-		\begin{itemize}
-			\item Chiavi: controllo esterno al CSP
-			\item Rete: modello \textbf{hub \& spoke}
-			\item Backup nel perimetro PSN
-		\end{itemize}
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.2]{9.png}}
+				\end{center}
+				
+			}&{
+				\begin{itemize}
+					\item \textbf{Public cloud} in Italia (hyperscaler)
+					\item \textbf{Security \& governance} nel perimetro PSN
+				\end{itemize}
+				
+				\vspace{1mm}
+				\begin{itemize}
+					\item Chiavi: controllo esterno al CSP
+					\item Rete: modello \textbf{hub \& spoke}
+					\item Backup nel perimetro PSN
+				\end{itemize}
+			}
+		\end{tabularx}
 		
-		\vspace{2mm}
-		% Immagine consigliata: diagramma 2 blocchi (Public cloud + PSN security)
-		% \includegraphics[width=0.85\linewidth]{spc_architecture.png}
+		
 	\end{frame}
 	
 	%================================================
@@ -313,6 +358,11 @@ version={4.0},
 			\item Centralità di: logging, monitoraggio, audit
 			\item ACN: indirizzo e rafforzamento capacità nazionali
 		\end{itemize}
+		
+		\vspace{2mm}
+		\begin{center}
+			\zoombox{\includegraphics[scale=0.25]{10.png}}
+		\end{center}
 	\end{frame}
 	
 	\begin{frame}{Caso operativo}
@@ -323,67 +373,94 @@ version={4.0},
 			\item \textbf{IAM}: gestione identità e autorizzazioni
 		\end{itemize}
 		\vspace{2mm}
-		% Immagine consigliata: schema SOC (log -> SIEM -> alert -> IR)
-		% \includegraphics[width=0.8\linewidth]{soc_siem.png}
+		
+		
+		
 	\end{frame}
 	
 	%================================================
 	\section{Centralizzazione vs Ibridazione}
 	%================================================
-	\begin{frame}{In che senso è ``più centralizzato''?}
-		\begin{itemize}
-			\item Regole comuni (governance)
-			\item Piattaforme nazionali (abilitatori)
-			\item Cataloghi, identità, auditing (punti di controllo)
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}{Perché resta ``distribuito''?}
-		\begin{itemize}
-			\item Cloud: multi-region, replica, DR
-			\item Coesistenza di modelli (PSN + hyperscaler)
-			\item Obiettivo: resilienza e scalabilità
-		\end{itemize}
+	\begin{frame}{In che senso è ``più centralizzato'' ma resta ``distribuito''?}
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\begin{center}
+					\textbf{\large È centralizzato perché: }
+				\end{center}
+				\begin{itemize}
+					\item Regole comuni (governance)
+					\item Piattaforme nazionali (abilitatori)
+					\item Cataloghi, identità, auditing (punti di controllo)
+				\end{itemize}
+			}&{
+				\begin{center}
+					\textbf{\large È distribuito perché:}
+				\end{center}
+				\begin{itemize}
+					\item Cloud: multi-region, replica, DR
+					\item Coesistenza di modelli (PSN + hyperscaler)
+					\item Obiettivo: resilienza e scalabilità
+				\end{itemize}
+			}
+		\end{tabularx}
 	\end{frame}
 	
 	%================================================
-	\section{Rischi e trade-off}
+	\section{Rischi}
 	%================================================
-	\begin{frame}{Concentrazione del rischio}
-		\begin{itemize}
-			\item Nodi critici = \textbf{high-value target}
-			\item Maggiore interconnessione = blast radius più alto
-			\item Serve segmentazione + controlli continui
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}{Il fattore umano}
-		\begin{itemize}
-			\item Credenziali e privilegi (IAM/PAM)
-			\item Errori operativi e procedure
-			\item Social engineering e supply chain
-		\end{itemize}
-	\end{frame}
-	
-	\begin{frame}{Dipendenza operativa}
-		\begin{itemize}
-			\item Strumenti \textbf{non bastano}: serve qualità reale
-			\item Log completi + correlazione + risposta rapida
-			\item DR efficace solo con \textbf{prove periodiche}
-		\end{itemize}
+	\begin{frame}{I rischi}
+		\begin{tabularx}{\linewidth}{XXX}
+			{
+				\begin{center}
+					\textbf{\large Il rischio tecnico}
+				\end{center}
+				\begin{itemize}
+					\item Nodi critici = \textbf{high-value target}
+					\item Maggiore interconnessione = blast radius più alto
+					\item Serve segmentazione + controlli continui
+				\end{itemize}
+			}&{
+				\begin{center}
+					\textbf{\large Il fattore umano}
+				\end{center}
+				\begin{itemize}
+					\item Credenziali e privilegi (IAM/PAM)
+					\item Errori operativi e procedure
+					\item Social engineering e supply chain
+				\end{itemize}
+			}&{
+				\begin{center}
+					\textbf{\large La dipendenza operativa}
+				\end{center}
+				\begin{itemize}
+					\item Strumenti \textbf{non bastano}: serve qualità reale
+					\item Log completi + correlazione + risposta rapida
+					\item DR efficace solo con \textbf{prove periodiche}
+				\end{itemize}
+			}
+		\end{tabularx}
 	\end{frame}
 	
 	%------------------------------------------------
 	% Closing
 	%------------------------------------------------
 	\begin{frame}{Conclusione}
-		\begin{center}
-			\Large
-			\textbf{La PA evolve verso governance centralizzata e infrastrutture distribuite:}
-			\\[2mm]
-			standardizzazione e resilienza aumentano, ma crescono anche
-			\textbf{dipendenze} e \textbf{rischi di concentrazione}.
-		\end{center}
+		\begin{tabularx}{\linewidth}{XX}
+			{
+				\vspace*{-1mm}
+				\begin{center}
+					\zoombox{\includegraphics[scale=0.25]{11.png}}
+				\end{center}
+			}&{
+				\begin{center}
+					\Large
+					\textbf{La PA evolve verso governance centralizzata e infrastrutture distribuite:}
+					\\[2mm]
+					standardizzazione e resilienza aumentano, ma crescono anche
+					\textbf{dipendenze} e \textbf{rischi di concentrazione}.
+				\end{center}
+			}
+		\end{tabularx}
 	\end{frame}
 	
 \end{document}
